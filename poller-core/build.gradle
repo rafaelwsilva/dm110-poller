@@ -1,0 +1,4 @@
+dependencies {
+	compile project(':poller-api')
+	compile project(':poller-ejb-client')
+}

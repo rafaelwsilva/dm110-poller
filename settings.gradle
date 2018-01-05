@@ -1,0 +1,1 @@
+include "poller-ear", "poller-war", "poller-api", "poller-core", "poller-ejb", "poller-ejb-client"

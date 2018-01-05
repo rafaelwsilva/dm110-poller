@@ -1,5 +1,14 @@
+.metadata/
+RemoteSystemsTempFiles/
+.settings/
+.classpath
+.project
+build/
+bin/
+.recommenders/
+
 .gradle
-/build/
+build/
 
 # Ignore Gradle GUI config
 gradle-app.setting

@@ -1,0 +1,25 @@
+apply plugin: 'ear'
+
+dependencies {
+    deploy project(path: ':poller-war', configuration: 'archives')
+    deploy project(path: ':poller-ejb', configuration: 'archives')
+
+    earlib project(':poller-api')
+	earlib project(':poller-core')
+	earlib project(':poller-ejb-client')
+}
+
+ear {
+    deploymentDescriptor {
+        def warName = project(':poller-war').name
+        def warVersion = project(':poller-war').version
+        def warFileName = warName + '-' + warVersion + '.war'
+        webModule(warFileName, 'poller')
+
+        def ejbName = project(':poller-ejb').name
+        def ejbVersion = project(':poller-ejb').version
+        def ejbFileName = ejbName + '-' + ejbVersion + '.jar'
+        module(ejbFileName, 'ejb')
+
+    }
+}
